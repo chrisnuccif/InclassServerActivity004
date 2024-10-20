@@ -4,16 +4,9 @@ header('Content-Type: image/jpeg');
 $imgname = "images/" . $_GET['file'] . ".jpg";
 $img = imagecreatefromjpeg($imgname);
 
-if (isset($_GET['width']) && is_numeric($_GET['width'])) 
-{
-    $w = intval($_GET['width']);
-    
-    $newimg = imagescale($img, $w, $w);
-} 
-else 
-{
-    $newimg = $img;
-}
+
+$w = $_GET['width'];
+$newimg = imagescale($img, $w, $w);
 
 $fontFile = realpath('font/Lato-Medium.ttf');
 
@@ -26,6 +19,7 @@ $textColor = imagecolorallocate($newimg, 238, 238, 238);
 
 imagettftext($newimg, $fontSize1, 0, 250, 160, $textColor, $fontFile, $fontText1);
 imagettftext($newimg, $fontSize2, 0, 250, 160, $textColor, $fontFile, $fontText2);
+
 imagejpeg($newimg);
 
 ?>
