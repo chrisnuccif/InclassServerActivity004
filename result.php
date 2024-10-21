@@ -1,11 +1,11 @@
 <?php
 header('Content-Type: image/jpeg');
 
-$imgname = "images/" . $_GET['file'] . ".jpg";
+$imgname = 'images/' . $_GET['file'] . '.jpg';
 $img = imagecreatefromjpeg($imgname);
 
 
-$w = $_GET['width'];
+$w = isset($$_GET['width'])? $_GET['width'] : 500;
 $newimg = imagescale($img, $w, $w);
 
 $fontFile = realpath('font/Lato-Medium.ttf');

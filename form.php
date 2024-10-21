@@ -9,7 +9,7 @@
     <meta charset="utf-8"/>  
     <title>Lab 12</title>   
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,800" rel="stylesheet">    
-    <link rel="stylesheet" href="css/ch12-proj3.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/severactivity.js"></script>
 </head>
 <body>
@@ -18,7 +18,7 @@
         <?php
             foreach($paintings as $painting) 
             {
-                echo '<img src="result.php?file='.$painting['filename'].'&width=100" data-value="'.$painting['filename'].'"/>';
+                echo '<img src="result.php?file='.$painting['filename'].'&width=100&tex1=&size1=&text2=&size2=" data-value="'.$painting['filename'].'"/>';
             }
         ?>
     </section>     
