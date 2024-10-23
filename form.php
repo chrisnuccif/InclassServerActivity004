@@ -15,12 +15,21 @@
 <body>
     <h1>Fine Art Meme Maker</h1> 
     <section class="grid-container">
-
+    <?php
+    foreach ($paintings as $painting) {
+        $filename = $painting['filename'];
+        $imagePath = "images/{$filename}.jpg";
+    }
+    ?>
     </section>     
-    <form action="result.php" method="get">
+    <form action="result.php" method="get" target="_blank">
         <label>Select Base Painting:</label>
         <select name="file" id="whichPainting">
-
+        <?php
+            foreach ($paintings as $painting) {
+                echo "<option value='{$painting['filename']}'>{$painting['title']} by {$painting['artist']}</option>";
+            }
+            ?>
         </select>
         <label>Meme 1 Text:</label>
         <input type="text" name="text1" size=50 value="Default text" />
